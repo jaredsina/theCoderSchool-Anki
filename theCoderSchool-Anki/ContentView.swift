@@ -9,13 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            WelcomePage()
+            FeaturesPage()
         }
-        .padding()
+        ///lets you scroll between tabs using swipe gesture
+        .tabViewStyle(.page)
         
     }
 }
