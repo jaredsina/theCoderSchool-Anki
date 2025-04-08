@@ -11,7 +11,7 @@ import SwiftUI
 struct theCoderSchool_AnkiApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomePage()
         }
     }
 }
