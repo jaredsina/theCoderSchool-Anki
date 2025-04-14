@@ -14,9 +14,9 @@ struct WelcomePage: View {
                 RoundedRectangle(cornerRadius: 20) /// corner radius 0 = 90 deg bigger means more
                     .frame(width:150,height:150)
                     .foregroundStyle(.white) /// every apps accent color defaults to blue
-                Image(systemName:"graduationcap.fill")
+                Image(systemName:"puzzlepiece.extension.fill")
                     .font(.system(size: 70))
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(.tint)
             }
             
                 
@@ -34,7 +34,17 @@ struct WelcomePage: View {
        
     }
 }
-
-#Preview {
-    WelcomePage()
+struct IconView: View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 20)
+                .frame(width: 150, height: 150)
+                .foregroundStyle(.white)
+            Image(systemName: "graduationcap.fill")
+                .font(.system(size: 70))
+                .foregroundStyle(.tint)
+        }
+    }
 }
+
+
