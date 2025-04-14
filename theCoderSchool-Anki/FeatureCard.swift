@@ -23,12 +23,15 @@ struct FeatureCard: View {
         }
         .padding()
         ///.frame(maxWidth: .infinity) this works to set the width but they want us to use spacer to push content to the left
-        .background(.tint, in: RoundedRectangle(cornerRadius: 12))
+        .background{
+            RoundedRectangle(cornerRadius: 12).foregroundStyle(.tint).opacity(0.75).brightness(0.25)
+        }
         .foregroundStyle(.white)
+        
         
     }
 }
 
-#Preview {
-    FeatureCard(iconName: "gamecontroller.fill", description: "Learn to code through fun games and challenges!")
-}
+//#Preview {
+//    FeatureCard(iconName: "gamecontroller.fill", description: "Learn to code through fun games and challenges!")
+//}
