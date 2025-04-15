@@ -16,8 +16,8 @@ let gradientColors: [Color] = [
 struct ContentView: View {
     var body: some View {
         TabView {
-            WelcomePage()
-            FeaturesPage()
+            WelcomePageView()
+            FeaturesPageView()
         }
         .background(Gradient(colors:gradientColors))
         .foregroundStyle(.white)

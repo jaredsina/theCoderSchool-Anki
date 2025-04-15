@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FeatureCard: View {
+struct FeatureCardView: View {
     let iconName: String
     let description: String
     

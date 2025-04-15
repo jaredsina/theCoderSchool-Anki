@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FeaturesPage: View {
+struct FeaturesPageView: View {
     var body: some View {
         VStack(spacing:30){
             Text("Features")
@@ -15,9 +15,9 @@ struct FeaturesPage: View {
                 .fontWeight(.semibold)
                 .padding(.bottom)
                 .padding(.top,100)
-            FeatureCard(iconName: "gamecontroller.fill", description: "Learn to code through fun games and challenges!")
-            FeatureCard(iconName:"person.3.sequence.fill", description:"Made just for kids - no confusing tech talk!")
-            FeatureCard(iconName:"clock.badge.checkmark", description:"Short, quick lessons you can finish anytime!")
+            FeatureCardView(iconName: "gamecontroller.fill", description: "Learn to code through fun games and challenges!")
+            FeatureCardView(iconName:"person.3.sequence.fill", description:"Made just for kids - no confusing tech talk!")
+            FeatureCardView(iconName:"clock.badge.checkmark", description:"Short, quick lessons you can finish anytime!")
             
             Spacer()
         }.padding()

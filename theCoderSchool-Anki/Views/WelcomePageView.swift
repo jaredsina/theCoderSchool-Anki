@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WelcomePage: View {
+struct WelcomePageView: View {
     var body: some View {
         VStack{
             ZStack{
