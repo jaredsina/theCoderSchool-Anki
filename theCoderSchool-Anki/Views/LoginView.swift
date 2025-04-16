@@ -19,29 +19,34 @@ struct LoginView: View {
             
             Spacer()
             
+            // Login Form
             Form{
-                /// Text Input similiar to html input
-                TextField("Email Address", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                /// Password Input similiar to html password input
-                SecureField("Password", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                Button {
+                Section(header:Text("Login").font(.title2).frame(maxWidth: .infinity, alignment:.center).padding(.bottom, 12)){
+                    /// Text Input similiar to html input
+                    TextField("Email Address", text: $email)
+                        .textFieldStyle(DefaultTextFieldStyle())
+                    
+                    /// Password Input similiar to html password input
+                    SecureField("Password", text: $password)
+                        .textFieldStyle(DefaultTextFieldStyle())
+                    
+                }
+                Section(header:Button {
                     // Attempt Log in
                 } label: {
                     ZStack{
-                        RoundedRectangle(cornerRadius: 10).foregroundColor(.yellow)
+                        RoundedRectangle(cornerRadius: 10).foregroundColor(.green)
                         
                         Text("Log In")
                             .foregroundColor(.white)
                             .bold()
+                            .padding()
                     }
+                }){
                 }
             }
         }
-       
     }
 }
 
@@ -53,11 +58,11 @@ struct LoginView: View {
 struct HeaderView: View {
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 30).foregroundStyle(.green).rotationEffect(.init(degrees: 15)).offset(y:-100)
+            RoundedRectangle(cornerRadius: 30).foregroundStyle(.green)
             VStack{
                 Text("theCoderSchool Anki").font(.title).foregroundColor(.white).bold()
                 Text("Science based code repitition for kids").font(.title3).foregroundColor(.white)
             }
-        }.frame(width: UIScreen.main.bounds.width * 3,height: 400).offset(y:-100)
+        }.frame(width: UIScreen.main.bounds.width * 3,height: 200).padding(.bottom,0)
     }
 }
