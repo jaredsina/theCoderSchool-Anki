@@ -8,32 +8,37 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var email = ""
-    @State var password = ""
+    /// what is a stateobject?
+    @StateObject var viewModel = LoginViewViewModel()
     
     
     var body: some View {
-        VStack{
+        VStack(spacing:0){
             // Header
             HeaderView()
-            
-            Spacer()
             
             // Login Form
             Form{
                 
-                Section(header:Text("Login").font(.title2).frame(maxWidth: .infinity, alignment:.center).padding(.bottom, 12)){
+                
+                
+                Section(header:Text("Login").font(.title2).frame(maxWidth: .infinity, alignment:.center)){
                     /// Text Input similiar to html input
-                    TextField("Email Address", text: $email)
+                    TextField("Email Address", text: $viewModel.email)
                         .textFieldStyle(DefaultTextFieldStyle())
-                    
+                        .autocorrectionDisabled()
+                        
+                     
                     /// Password Input similiar to html password input
-                    SecureField("Password", text: $password)
+                    SecureField("Password", text: $viewModel.password)
                         .textFieldStyle(DefaultTextFieldStyle())
-                    
                 }
+               
+                Section(header:Text(viewModel.errorMessage).foregroundStyle(Color.red)){}
+                
                 Section(header:Button {
                     // Attempt Log in
+                    viewModel.login()
                 } label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 10).foregroundColor(.green)
@@ -63,6 +68,6 @@ struct HeaderView: View {
                 Text("theCoderSchool Anki").font(.title).foregroundColor(.white).bold()
                 Text("Science based code repitition for kids").font(.title3).foregroundColor(.white)
             }
-        }.frame(width: UIScreen.main.bounds.width * 3,height: 200).padding(.bottom,0)
+        }.frame(width: UIScreen.main.bounds.width * 3,height: 200)
     }
 }
