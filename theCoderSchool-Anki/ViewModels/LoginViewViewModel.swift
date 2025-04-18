@@ -6,6 +6,7 @@
 //
 
 
+import FirebaseAuth
 import Foundation
 
 /// what does Observable Object mean?
@@ -25,9 +26,9 @@ class LoginViewViewModel: ObservableObject {
         }
         
         // Try to log in
-        
+        Auth.auth().signIn(withEmail:email, password: password)
     }
-    
+     
     private func validate() -> Bool{
         // reset error message in login
         errorMessage = ""
