@@ -14,15 +14,24 @@ let gradientColors: [Color] = [
 ]
 
 struct ContentView: View {
+    @StateObject var viewModel = ContentViewViewModel()
+    
+    
+    
     var body: some View {
-        TabView {
-            WelcomePageView()
-            FeaturesPageView()
+        if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
+            // signed in
+            TabView {
+                WelcomePageView()
+                FeaturesPageView()
+            }
+            .background(Gradient(colors:gradientColors))
+            .foregroundStyle(.white)
+            ///lets you scroll between tabs using swipe gesture
+            .tabViewStyle(.page)
+        }else{
+            LoginView()
         }
-        .background(Gradient(colors:gradientColors))
-        .foregroundStyle(.white)
-        ///lets you scroll between tabs using swipe gesture
-        .tabViewStyle(.page)
         
     }
 }

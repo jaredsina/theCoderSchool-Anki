@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct theCoderSchool_AnkiApp: App {
+    
+    init(){
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            LoginView().preferredColorScheme(.light)
+            ContentView().preferredColorScheme(.light)
         }
     }
 }
